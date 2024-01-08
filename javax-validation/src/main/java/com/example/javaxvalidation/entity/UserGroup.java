@@ -1,6 +1,7 @@
-package com.example.validation.entity;
+package com.example.javaxvalidation.entity;
 
-import com.example.validation.annatation.BasicInfoGroup;
+import com.example.javaxvalidation.annatation.BasicInfoGroup;
+
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import jakarta.validation.groups.Default;

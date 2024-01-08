@@ -1,4 +1,4 @@
-package com.example.validation.entity;
+package com.example.javaxvalidation.entity;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

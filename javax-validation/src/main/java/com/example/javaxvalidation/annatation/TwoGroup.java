@@ -1,4 +1,4 @@
-package com.example.validation.annatation;
+package com.example.javaxvalidation.annatation;
 
 public interface TwoGroup extends BasicInfoGroup{
 }

@@ -1,17 +1,18 @@
-package com.example.validation.controller;
+package com.example.javaxvalidation.controller;
 
-import com.example.validation.annatation.BasicInfoGroup;
-import com.example.validation.annatation.ExtendedInfoGroup;
-import com.example.validation.entity.User;
-import com.example.validation.entity.UserGroup;
+
+import com.example.javaxvalidation.annatation.BasicInfoGroup;
+import com.example.javaxvalidation.annatation.ExtendedInfoGroup;
+import com.example.javaxvalidation.entity.User;
+import com.example.javaxvalidation.entity.UserGroup;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.groups.Default;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/validation")
