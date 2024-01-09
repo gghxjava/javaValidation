@@ -132,7 +132,11 @@ public class ValidationController {
     }
 
     @PostMapping("/processFormGroup11")
-    public String processFormGroup11(@Validated(BasicInfoGroup.class) @RequestBody UserGroup a, String b) {
+    public String processFormGroup11( @RequestBody UserGroup a,BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            // 如果有校验错误，返回表单页面
+            return "userForm";
+        }
         // 处理表单提交逻辑
         return "success";
     }

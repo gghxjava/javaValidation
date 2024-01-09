@@ -4,6 +4,8 @@ import com.example.jakavalidation.annatation.BasicInfoGroup;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -15,7 +17,7 @@ import javax.validation.groups.Default;
 @Valid
 public class UserGroup {
 
-    @NotNull(message = "用户名不能为空",groups = BasicInfoGroup.class)
+    @NotNull(message = "用户名不能为空",groups = {BasicInfoGroup.class})
     private String username;
 
     @NotNull(message = "密码不能为空")
@@ -117,8 +119,18 @@ public class UserGroup {
     @Size(min = 1,max = 5)
     private String size2;
 
+    @Length(min = 1,max = 6,groups = BasicInfoGroup.class)
+    private String length1;
+
+    @Length(min = 1,max = 6)
+    private String length2;
 
 
+    @Range(min = 1,max = 6,groups = BasicInfoGroup.class)
+    private String range1;
+
+    @Range(min = 1,max = 6)
+    private String range2;
 
 
 }
