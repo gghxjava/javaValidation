@@ -34,8 +34,18 @@ public class ValidationController {
         return "success";
     }
 
+    @PostMapping("/processFormGroupPlus")
+    public String processFormGroupPlus(@Validated  UserGroup user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            // 如果有校验错误，返回表单页面
+            return "userForm";
+        }
+        // 处理表单提交逻辑
+        return "success";
+    }
+
     @PostMapping("/processFormGroup")
-    public String processFormGroup(@Validated({BasicInfoGroup.class, ExtendedInfoGroup.class}) @RequestBody UserGroup user, BindingResult bindingResult) {
+    public String processFormGroup(@Validated({BasicInfoGroup.class, ExtendedInfoGroup.class})@RequestBody  UserGroup user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // 如果有校验错误，返回表单页面
             return "userForm";
@@ -45,7 +55,17 @@ public class ValidationController {
     }
 
     @PostMapping("/processFormGroupThree")
-    public String processFormGroupThree(@Validated({ExtendedInfoGroup.class}) @RequestBody UserGroup user, BindingResult bindingResult) {
+    public String processFormGroupThree(@Validated({BasicInfoGroup.class})  UserGroup user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            // 如果有校验错误，返回表单页面
+            return "userForm";
+        }
+        // 处理表单提交逻辑
+        return "success";
+    }
+
+    @PostMapping("/processFormGroupThreePlus")
+    public String processFormGroupThreePlus(@Validated({BasicInfoGroup.class}) @RequestBody UserGroup user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // 如果有校验错误，返回表单页面
             return "userForm";
