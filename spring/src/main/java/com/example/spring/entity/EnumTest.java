@@ -45,4 +45,6 @@ public class EnumTest {
      */
     private String name;
 
+    private UserTypeAdmin userTypeAdmin;
+
 }

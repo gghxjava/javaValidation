@@ -21,6 +21,8 @@ public class JsonOrder {
     private String one4;
     @JsonProperty(index = 30)
     private String one5;
+    @JsonProperty(index = 31)
+    private String one7;
 
 
 }
