@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GrandParent {
+public class GrandParent extends Person<O>{
 
     private String az1;
     private String bz2;
