@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
 public class MyAppProperties {
 
     private String property1="qxd";
+
+    private Boolean aBoolean;
     private int property2=22;
 
 }

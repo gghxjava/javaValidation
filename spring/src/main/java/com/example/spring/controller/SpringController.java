@@ -1,11 +1,16 @@
 package com.example.spring.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.spring.entity.*;
+import com.example.spring.entity.test.AccountApiTemplate;
+import com.example.spring.entity.test.UserApiTemplate;
+import com.example.spring.entity.test.UserRequestParam;
 import com.example.spring.enumData.UserTypeAdmin;
 import org.springframework.beans.support.PagedListHolder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +18,6 @@ import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.multipart.MultipartFile;
 import reactor.core.publisher.Flux;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -63,7 +67,7 @@ public class SpringController {
     }
 
     @PostMapping("/spTen")
-    public String spTen(MyAppProperties sp) {
+    public String spTen(@RequestBody MyAppProperties sp) {
         return "aaa";
     }
 
@@ -72,8 +76,13 @@ public class SpringController {
         return "aaa";
     }
 
+    /**
+     * @author APS-CFyG2vZkpHoZwr5yuuR8f23LNvinr0G4
+     * @param sp
+     * @return
+     */
     @PostMapping("/sp12")
-    public String sp12(@RequestBody EnumTest sp) {
+    public String sp12(@RequestBody EnumTest sp,@PathVariable("name")String name) {
         int ordinal = UserTypeAdmin.ADMIN.ordinal();
         return "aaa";
     }
@@ -108,7 +117,7 @@ public class SpringController {
     }
 
     @PostMapping("/sp18")
-    public R<IPage<Son>> sp18(IPage<Son> sp) {
+    public R<IPage<Son>> sp18(String sp) {
         int ordinal = UserTypeAdmin.ADMIN.ordinal();
         return null;
     }
@@ -125,10 +134,35 @@ public class SpringController {
         return "aaa";
     }
 
-//    @PostMapping("/sp17")
-//    public R<Son> sp17(@RequestBody Flux<Son> sp) {
-//        int ordinal = UserTypeAdmin.ADMIN.ordinal();
-//        return null;
-//    }
+    @PostMapping("/sp17")
+    public R<Son> sp17(@RequestBody Flux<Son> sp) {
+        int ordinal = UserTypeAdmin.ADMIN.ordinal();
+        return null;
+    }
+
+    @PostMapping("/sp20")
+    public String sp20(@RequestBody AccountApiTemplate sp) {
+        return "aaa";
+    }
+
+    @PostMapping(value = "/sp21", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String sp21(@RequestBody UserApiTemplate sp) {
+        return "aaa";
+    }
+
+    @PostMapping(value = "/sp22")
+    public String sp22(@RequestBody DataTest sp) {
+        return "aaa";
+    }
+
+    @PostMapping(value = "/sp23")
+    public R<Page<Son>> sp23(@RequestBody DataTest sp) {
+        return null;
+    }
+
+    @PostMapping(value = "/sp24/{aa}")
+    public R<Page<Son>> sp24(String a) {
+        return null;
+    }
 
 }

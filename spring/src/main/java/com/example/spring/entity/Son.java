@@ -1,15 +1,18 @@
 package com.example.spring.entity;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Son extends Parent{
+@Data
+public class Son extends Parent implements Serializable {
 
     /**
      * @readOnly

@@ -11,8 +11,12 @@
     <groupId>com.example</groupId>
     <artifactId>validation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>validation</name>
     <description>validation</description>
+    <modules>
+        <module>userTest</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
     </properties>

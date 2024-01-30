@@ -4,10 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Parent extends GrandParent{
+@Data
+public class Parent extends GrandParent implements Serializable {
 
     private String ap1;
     private String bp2;

@@ -2,6 +2,7 @@ package com.example.jakavalidation.controller;
 
 import com.example.jakavalidation.annatation.BasicInfoGroup;
 import com.example.jakavalidation.annatation.ExtendedInfoGroup;
+import com.example.jakavalidation.entity.Data;
 import com.example.jakavalidation.entity.User;
 import com.example.jakavalidation.entity.UserGroup;
 import jakarta.validation.Valid;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+/**
+ * 目录1/目录2
+ */
 @RestController
 @RequestMapping("/validation")
 public class ValidationController {
@@ -34,13 +37,13 @@ public class ValidationController {
     }
 
     @PostMapping("/processFormGroup")
-    public String processFormGroup(@Validated({BasicInfoGroup.class, ExtendedInfoGroup.class}) @RequestBody UserGroup user, BindingResult bindingResult) {
+    public User processFormGroup(@Validated({ExtendedInfoGroup.class, BasicInfoGroup.class}) @RequestBody UserGroup user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // 如果有校验错误，返回表单页面
-            return "userForm";
+            return null;
         }
         // 处理表单提交逻辑
-        return "success";
+        return null;
     }
 
     @PostMapping("/processFormGroupThree")
@@ -64,7 +67,7 @@ public class ValidationController {
     }
 
     @PostMapping("/processFormGroupFive")
-    public String processFormGroupFive(@Validated() @RequestBody UserGroup user, BindingResult bindingResult) {
+    public String processFormGroupFive(@Validated @RequestBody UserGroup user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // 如果有校验错误，返回表单页面
             return "userForm";
@@ -74,7 +77,7 @@ public class ValidationController {
     }
 
     @PostMapping("/processFormGroupSix")
-    public String processFormGroupSix(@Validated({}) @RequestBody UserGroup user, BindingResult bindingResult) {
+    public String processFormGroupSix(@Validated({BasicInfoGroup.class}) @RequestBody UserGroup user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // 如果有校验错误，返回表单页面
             return "userForm";
@@ -124,11 +127,7 @@ public class ValidationController {
         return "success";
     }
 
-    @PostMapping("/processFormGroupTen")
-    public String processFormGroupTen(@NotNull UserGroup a, String b) {
-        // 处理表单提交逻辑
-        return "success";
-    }
+
 
     @PostMapping("/processFormGroup11")
     public String processFormGroup11(@Validated(BasicInfoGroup.class) @RequestBody UserGroup a,BindingResult bindingResult) {
@@ -139,6 +138,32 @@ public class ValidationController {
         // 处理表单提交逻辑
         return "success";
     }
+
+    @PostMapping("/processFormGroupTen")
+    public String processFormGroupTen(@NotNull UserGroup a, String b) {
+        // 处理表单提交逻辑
+        return "success";
+    }
+
+//    @PostMapping("/processFormGroupData")
+//    public String processFormGroupData(@Validated(BasicInfoGroup.class)@RequestBody Data a, BindingResult bindingResult) {
+//        if (bindingResult.hasErrors()) {
+//            // 如果有校验错误，返回表单页面
+//            return "userForm";
+//        }
+//        // 处理表单提交逻辑
+//        return "success";
+//    }
+//
+//    @PostMapping("/processFormGroupData1")
+//    public String processFormGroupData1( @RequestBody Data a, BindingResult bindingResult) {
+//        if (bindingResult.hasErrors()) {
+//            // 如果有校验错误，返回表单页面
+//            return "userForm";
+//        }
+//        // 处理表单提交逻辑
+//        return "success";
+//    }
 
 
 

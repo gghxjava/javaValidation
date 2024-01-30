@@ -11,9 +11,18 @@ import lombok.NoArgsConstructor;
 public class EnumTest {
 
     /**
+     * @see RGB
+     */
+    private String rgb;
+
+    /**
      * @see UserTypeAdmin
      */
-    private String hhhhh;
+    private String isQxd;
+
+
+
+
 
     /**
      * @see UserTypeAdmin
@@ -45,6 +54,9 @@ public class EnumTest {
      */
     private String name;
 
+    /**
+     * @see UserTypeAdmin
+     */
     private UserTypeAdmin userTypeAdmin;
 
 }
