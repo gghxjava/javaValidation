@@ -14,6 +14,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -146,6 +148,8 @@ public class UserGroup {
 
     @Range(min = 1,max = 6)
     private String range2;
+
+    private List<Address> addresses;
 
 
 }

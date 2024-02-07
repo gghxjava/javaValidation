@@ -11,18 +11,19 @@ import lombok.NoArgsConstructor;
 public class EnumTest {
 
     /**
-     * @see RGB
+     * @see UserTypeAdmin
      */
-    private String rgb;
+    private String noEqualEnumPro;
+
+    /**
+     * @see UserTypeAdmin#code
+     */
+    private String noEqualEnumProButByCode;
 
     /**
      * @see UserTypeAdmin
      */
-    private String isQxd;
-
-
-
-
+    private String code;
 
     /**
      * @see UserTypeAdmin
@@ -30,33 +31,38 @@ public class EnumTest {
     private String desc;
 
     /**
-     * @see UserTypeAdmin
+     * @see UserTypeAdmin#desc
      */
-    private String sy1;
+    private String noEqualEnumProButByDesc;
 
     /**
      * @see UserTypeAdmin
-     */
-    private String sy3;
-
-    /**
-     * @see UserTypeAdmin#ordinal()
-     */
-    private String sy4;
-
-    /**
-     * @see UserTypeAdmin#ordinal()
      */
     private String address;
 
     /**
-     * @see UserTypeAdmin#name()
+     * @see UserTypeAdmin#address
+     */
+    private String noEqualEnumProButByAddress;
+
+    /**
+     * @see UserTypeAdmin
      */
     private String name;
+
+    /**
+     * @see UserTypeAdmin#name
+     */
+    private String noEqualEnumProButByName;
 
     /**
      * @see UserTypeAdmin
      */
     private UserTypeAdmin userTypeAdmin;
+
+    /**
+     * 自定义脚本规则实现 需要取消默认配置的枚举规则 不然会同时生效的
+     */
+    private UserTypeAdmin userTypeAdminSelf;
 
 }

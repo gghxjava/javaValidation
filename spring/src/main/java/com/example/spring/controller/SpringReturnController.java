@@ -10,8 +10,9 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 
 import java.io.*;
 
-@RestController
-@ResponseBody
+/**
+ * @qxd
+ */
 @RequestMapping(value = "/springReturnController",produces = {MediaType.APPLICATION_OCTET_STREAM_VALUE})
 public class SpringReturnController {
 

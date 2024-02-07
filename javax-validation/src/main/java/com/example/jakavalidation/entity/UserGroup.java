@@ -2,6 +2,7 @@ package com.example.jakavalidation.entity;
 
 import com.example.jakavalidation.annatation.BasicInfoGroup;
 import com.example.jakavalidation.annatation.ExtendedInfoGroup;
+import com.example.jakavalidation.annatation.ParamIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import org.hibernate.validator.constraints.Range;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import javax.validation.groups.Default;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -137,6 +139,14 @@ public class UserGroup {
 
     @Range(min = 1,max = 6)
     private String range2;
+
+    @ParamIgnore(groups = BasicInfoGroup.class)
+    private List<User> paramIgnore1;
+
+
+    @ParamIgnore
+    private List<User> paramIgnore2;
+
 
 
 }

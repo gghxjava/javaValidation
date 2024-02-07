@@ -18,4 +18,7 @@ public class Address {
     @NotNull(message = "简略地址不能为空")
     private String addressSimple;
 
+
 }
+
+

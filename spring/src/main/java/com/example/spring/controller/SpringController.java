@@ -76,14 +76,8 @@ public class SpringController {
         return "aaa";
     }
 
-    /**
-     * @author APS-CFyG2vZkpHoZwr5yuuR8f23LNvinr0G4
-     * @param sp
-     * @return
-     */
     @PostMapping("/sp12")
-    public String sp12(@RequestBody EnumTest sp,@PathVariable("name")String name) {
-        int ordinal = UserTypeAdmin.ADMIN.ordinal();
+    public String sp12(@RequestBody EnumTest sp) {
         return "aaa";
     }
 
@@ -164,5 +158,37 @@ public class SpringController {
     public R<Page<Son>> sp24(String a) {
         return null;
     }
+
+    /**
+     *
+     * @param a
+     * @response {@link List<Son>}
+     */
+    @PostMapping(value = "/sp25/{aa}")
+    public R<Page<Son>> sp25(String a) {
+        return null;
+    }
+
+    /**
+     *
+     * @param a
+     * @response {@link List<EnumTest> }
+     */
+    @PostMapping(value = "/sp26/{aa}")
+    public R<Page<Son>> sp26(String a) {
+        return null;
+    }
+
+    /**
+     *
+     * @param a
+     */
+    @PostMapping(value = "/sp27/{aa}")
+    public R<Void> sp27(String a) {
+        return null;
+    }
+
+
+
 
 }

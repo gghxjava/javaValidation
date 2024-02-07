@@ -4,14 +4,24 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
+/**
+ * @author stackClass
+ * @zz
+ */
 @RestController
 @RequestMapping("/api")
 @Api(tags = "Sample API", description = "Operations for the Sample API")
 public class SampleController {
 
+    /**
+     * 名字
+     * @author methodStack
+     * @zz 123
+     */
     @GetMapping("/hello")
-    @ApiOperation("Get a greeting message1")
+    //@ApiOperation("Get a greeting message1")
     public String hello() {
         return "Hello, World!";
     }
@@ -20,7 +30,7 @@ public class SampleController {
     @ApiOperation("Add two numbers")
     public int add(
             @ApiParam(value = "First number", required = true) @RequestParam int a,
-            @ApiParam(value = "Second number", required = true) @RequestParam int b) {
+            @ApiParam(value = "Second number", required = true) @RequestParam int b,@ApiIgnore String A) {
         return a + b;
     }
 
